@@ -1,0 +1,9 @@
+*.swp
+*.save
+.vscode/
+log.json
+client.json
+pixivpy/
+dist/
+__pycache__/
+*egg-info/
