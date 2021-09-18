@@ -1,5 +1,7 @@
 # simpleverse
 
+[![PyPI](https://img.shields.io/pypi/v/simpleverse?color=blue)](https://pypi.org/project/simpleverse) [![Maintainability]](https://codeclimate.com/github/eggplants/simpleverse/maintainability)
+
 API wrapper for [versatileapi](https://versatileapi.herokuapp.com/api) in Python
 
 ## Install
