@@ -9,8 +9,8 @@ python -m twine upload --repository pypi dist/*
 
 setup(
     name='simpleverse',
-    version='0.1',
-    description='',
+    version='0.2',
+    description='API wrapper for versatileapi in Python',
     description_content_type='',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
