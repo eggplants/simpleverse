@@ -106,12 +106,16 @@ def parse() -> argparse.Namespace:
         help=""
     )
     submit_post_parser.add_argument(
+        "text", metavar="TEXT", type=str,
+        help="post text"
+    )
+    submit_post_parser.add_argument(
         "-u", "--user_id", metavar="USERID", type=str,
-        help="id of a specific user"
+        help="id of a specific user you reply to"
     )
     submit_post_parser.add_argument(
         "-p", "--post_id", metavar="POSTID", type=str,
-        help="id of a specific post"
+        help="id of a specific post you reply to"
     )
     submit_post_parser.set_defaults(func=func_submit_post)
 
