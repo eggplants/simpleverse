@@ -65,6 +65,43 @@ $ simv gu -u b6e4ae19fc2c59ce55c726de44a40dc825faa04d
     'description': 'こんにちは。https://github.com/eggplants/simpleverseを書きました。',
     'name': 'eggplants'
 }
+$ # All posts by a specific user
+$ simv gp | jq '.[]|select(._user_id=="b6e4ae19fc2c59ce55c726de44a40dc825faa04d")'
+{
+  "_created_at": "2021-09-18T18:50:33.316+00:00",
+  "_updated_at": "2021-09-18T18:50:33.316+00:00",
+  "_user_id": "b6e4ae19fc2c59ce55c726de44a40dc825faa04d",
+  "id": "12d7d6c5-1412-4299-9fe0-4e11c5261aab",
+  "text": "test"
+}
+{
+  "_created_at": "2021-09-19T04:10:35.054+00:00",
+  "_updated_at": "2021-09-19T04:10:35.054+00:00",
+  "_user_id": "b6e4ae19fc2c59ce55c726de44a40dc825faa04d",
+  "id": "81dd0981-de48-47b6-bb81-2bc33579d0d1",
+  "text": "hello woooooooold!"
+}
+{
+  "_created_at": "2021-09-19T04:14:44.837+00:00",
+  "_updated_at": "2021-09-19T04:14:44.837+00:00",
+  "_user_id": "b6e4ae19fc2c59ce55c726de44a40dc825faa04d",
+  "id": "b281751f-03a9-47b0-ace1-2dc1be620a2a",
+  "text": "hello woooooooold!\n(this post submitted by https://git.io/JzmhD)"
+}
+{
+  "_created_at": "2021-09-19T04:39:57.808+00:00",
+  "_updated_at": "2021-09-19T04:39:57.808+00:00",
+  "_user_id": "b6e4ae19fc2c59ce55c726de44a40dc825faa04d",
+  "id": "d2f875a4-540e-4332-ae4e-5ac80d435449",
+  "text": "a"
+}
+{
+  "_created_at": "2021-09-19T04:45:42.017+00:00",
+  "_updated_at": "2021-09-19T04:45:42.017+00:00",
+  "_user_id": "b6e4ae19fc2c59ce55c726de44a40dc825faa04d",
+  "id": "00210022-a452-4be7-a873-d369b1bf8d70",
+  "text": "コレはテストです"
+}
 ```
 
 </details>
