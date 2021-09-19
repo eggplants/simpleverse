@@ -18,7 +18,7 @@ def func_update_user(ns: argparse.Namespace) -> None:
 
 def func_get_post(ns: argparse.Namespace) -> None:
     g = GetPostInfo()
-    if ns.id is None:
+    if ns.post_id is None:
         print(g.get_post_all())
     else:
         print(g.get_post(ns.post_id))
@@ -26,7 +26,7 @@ def func_get_post(ns: argparse.Namespace) -> None:
 
 def func_get_user(ns: argparse.Namespace) -> None:
     g = GetUserInfo()
-    if ns.id is None:
+    if ns.user_id is None:
         print(g.get_user_all())
     else:
         print(g.get_user(ns.user_id))
