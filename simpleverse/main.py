@@ -1,9 +1,22 @@
 import argparse
+from json import dumps
+from typing import Any
 
 from .create_user import CreateUser
 from .get_post import GetPostInfo
 from .get_user import GetUserInfo
 from .submit_post import SubmitPost
+
+
+def pprint_json(json_obj: Any) -> None:
+    print(
+        dumps(
+            json_obj,
+            sort_keys=True,
+            indent=4,
+            ensure_ascii=False
+        )
+    )
 
 
 def func_create_user(ns: argparse.Namespace) -> None:
@@ -19,17 +32,17 @@ def func_update_user(ns: argparse.Namespace) -> None:
 def func_get_post(ns: argparse.Namespace) -> None:
     g = GetPostInfo()
     if ns.post_id is None:
-        print(g.get_post_all())
+        pprint_json(g.get_post_all())
     else:
-        print(g.get_post(ns.post_id))
+        pprint_json(g.get_post(ns.post_id))
 
 
 def func_get_user(ns: argparse.Namespace) -> None:
     g = GetUserInfo()
     if ns.user_id is None:
-        print(g.get_user_all())
+        pprint_json(g.get_user_all())
     else:
-        print(g.get_user(ns.user_id))
+        pprint_json(g.get_user(ns.user_id))
 
 
 def func_submit_post(ns: argparse.Namespace) -> None:

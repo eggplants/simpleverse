@@ -33,24 +33,38 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-
 $ simv cu -n eggplants -d "https://github.com/eggplants/simpleverseを書きました。"
 b6e4ae19fc2c59ce55c726de44a40dc825faa04d
-
 $ simv gu -u b6e4ae19fc2c59ce55c726de44a40dc825faa04d
-{'id': 'b6e4ae19fc2c59ce55c726de44a40dc825faa04d', '_created_at': '2021-09-19T04:35:11.765+00:00', '_updated_at': '2021-09-19T04:35:11.765+00:00', '_user_id': 'b6e4ae19fc2c59ce55c726de44a40dc825faa04d', 'description': 'https://github.com/eggplants/simpleverseを書きました。', 'name': 'eggplants'}
-
+{
+    'id': 'b6e4ae19fc2c59ce55c726de44a40dc825faa04d',
+    '_created_at': '2021-09-19T04:35:11.765+00:00',
+    '_updated_at': '2021-09-19T04:35:11.765+00:00',
+    '_user_id': 'b6e4ae19fc2c59ce55c726de44a40dc825faa04d',
+    'description': 'https://github.com/eggplants/simpleverseを書きました。',
+    'name': 'eggplants'
+}
 $ simv sp "コレはテストです"
 00210022-a452-4be7-a873-d369b1bf8d70
-
 $ simv gp -p 00210022-a452-4be7-a873-d369b1bf8d70
-{'id': '00210022-a452-4be7-a873-d369b1bf8d70', '_created_at': '2021-09-19T04:45:42.017+00:00', '_updated_at': '2021-09-19T04:45:42.017+00:00', '_user_id': 'b6e4ae19fc2c59ce55c726de44a40dc825faa04d', 'text': 'コレはテストです'}
-
+{
+    'id': '00210022-a452-4be7-a873-d369b1bf8d70',
+    '_created_at': '2021-09-19T04:45:42.017+00:00',
+    '_updated_at': '2021-09-19T04:45:42.017+00:00',
+    '_user_id': 'b6e4ae19fc2c59ce55c726de44a40dc825faa04d',
+    'text': 'コレはテストです'
+}
 $ simv uu -n eggplants -d "こんにちは。https://github.com/eggplants/simpleverseを書きました。"
 b6e4ae19fc2c59ce55c726de44a40dc825faa04d
-
 $ simv gu -u b6e4ae19fc2c59ce55c726de44a40dc825faa04d
-{'id': 'b6e4ae19fc2c59ce55c726de44a40dc825faa04d', '_created_at': '2021-09-19T04:35:11.765+00:00', '_updated_at': '2021-09-19T04:46:53.659+00:00', '_user_id': 'b6e4ae19fc2c59ce55c726de44a40dc825faa04d', 'description': 'こんにちは。https://github.com/eggplants/simpleverseを書きました。', 'name': 'eggplants'}
+{
+    'id': 'b6e4ae19fc2c59ce55c726de44a40dc825faa04d',
+    '_created_at': '2021-09-19T04:35:11.765+00:00',
+    '_updated_at': '2021-09-19T04:46:53.659+00:00',
+    '_user_id': 'b6e4ae19fc2c59ce55c726de44a40dc825faa04d',
+    'description': 'こんにちは。https://github.com/eggplants/simpleverseを書きました。',
+    'name': 'eggplants'
+}
 ```
 
 </details>
