@@ -157,12 +157,14 @@ class SubmitPost(BaseVerseRequests):
 
 <!-- markdownlint-enable MD033 -->
 
-## TIPS
+## TIPS/Links
 
 - [エンジニア・プログラマにしか使えない SNS を作ってみた話](https://qiita.com/HawkClaws/items/599d7666f55e79ef7f56)
 - [Swagger](https://editor.swagger.io/?url=https://gist.githubusercontent.com/YusukeIwaki/ce8a7250fb7e5279267c495324de19f7/raw/292eb24fb381c9af49fc42c901794ec2d98d134a/openapi.yml)
 - [エンジニア・プログラマにしか使えないSNSのWebクライアント](https://lightwill.tokyo/dev/sns/?selectUserId=b6e4ae19fc2c59ce55c726de44a40dc825faa04d)
-  - `https://lightwill.tokyo/dev/sns/?selectUserId={userid}`
+  - posts of spesific user: `https://lightwill.tokyo/dev/sns/?selectUserId={userid}`
+- [hir0o/sns-for-engineer](https://github.com/hir0o/sns-for-engineer)
+  - deployed at: <http://sns-for-engineer.vercel.app/>
 
 ## License
 
