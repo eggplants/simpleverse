@@ -1,5 +1,6 @@
 import requests
 
+
 class BaseVerseRequests:
     URL: str
     def get_endpoint(self, endpoint: str) -> str: ...

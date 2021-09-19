@@ -1,8 +1,10 @@
 import argparse
+
 from .create_user import CreateUser as CreateUser
 from .get_post import GetPostInfo as GetPostInfo
 from .get_user import GetUserInfo as GetUserInfo
 from .submit_post import SubmitPost as SubmitPost
+
 
 def func_create_user(ns: argparse.Namespace) -> None: ...
 def func_update_user(ns: argparse.Namespace) -> None: ...

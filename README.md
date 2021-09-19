@@ -30,6 +30,55 @@ optional arguments:
   -h, --help            show this help message and exit
 ```
 
+## Library
+
+<!-- markdownlint-disable MD033 -->
+
+<details>
+<summary>simpleverse's classes and its methods</summary>
+
+```python
+from simpleverse import (CreateUser,
+                         GetPostInfo,
+                         GetUserInfo,
+                         SubmitPost)
+
+
+class CreateUser(BaseVerseRequests):
+    def create_user(self, name: str, description: str) -> str: ...
+    def update_user(self, name: str, description: str) -> str: ...
+
+
+class GetPostInfo(BaseVerseRequests):
+    def get_post_all(self) -> List[PostInfo]: ...
+    def get_post(self, id_: str) -> PostInfo: ...
+    def get_post_OData(
+        self,
+        filter_: Optional[str],
+        order_by: Optional[str],
+        limit: Optional[str],
+        skip: Optional[str]
+    ) -> List[PostInfo]: ...
+
+
+class GetUserInfo(BaseVerseRequests):
+    def get_user_all(self) -> List[UserInfo]: ...
+    def get_user(self, id_: str) -> UserInfo: ...
+
+
+class SubmitPost(BaseVerseRequests):
+    def submit_post(
+        self,
+        text: str,
+        rep_user_id: Optional[str],
+        rep_post_id: Optional[str]
+    ) -> str: ...
+```
+
+</details>
+
+<!-- markdownlint-enable MD033 -->
+
 ## TIPS
 
 - [エンジニア・プログラマにしか使えない SNS を作ってみた話](https://qiita.com/HawkClaws/items/599d7666f55e79ef7f56)

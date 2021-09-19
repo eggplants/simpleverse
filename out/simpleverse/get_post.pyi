@@ -1,6 +1,8 @@
+from typing import List, Optional
+
 from .base import BaseVerseRequests as BaseVerseRequests
 from .schemas import PostInfo as PostInfo
-from typing import List, Optional
+
 
 class GetPostInfo(BaseVerseRequests):
     def get_post_all(self) -> List[PostInfo]: ...
