@@ -42,7 +42,7 @@ class BaseVerseRequests(object):
 
     @staticmethod
     def validate_parameter(val: Any, min: int, max: int, name: str) -> None:
-        len_val = getsizeof(val)
+        len_val = len(val)
         assert max >= min, "{} > {} is invalid".format(min, max)
         assert max >= len_val >= min, 'invalid "{}" length ({} >= {} >= {})'.format(
             name, max, len_val, min

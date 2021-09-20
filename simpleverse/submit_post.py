@@ -15,8 +15,7 @@ class SubmitPost(BaseVerseRequests):
         rep_post_id: Optional[str] = None,
         test: bool = False,
     ) -> str:
-        if not (281 > len(text) > 0):
-            raise ValueError(f"text = {len(text)}")
+        self.validate_parameter(text, 1, 280, "text")
         params = cast(
             PostRequest,
             {
@@ -24,8 +23,10 @@ class SubmitPost(BaseVerseRequests):
             },
         )
         if rep_user_id is not None:
+            self.validate_parameter(rep_user_id, 40, 40, "rep_user_id")
             params["in_reply_to_user_id"] = rep_user_id
         if rep_post_id is not None:
+            self.validate_parameter(rep_post_id, 36, 36, "rep_post_id")
             params["in_reply_to_text_id"] = rep_post_id
         res = requests.post(
             url=self.get_endpoint("/text_test" if test else "/text"),
