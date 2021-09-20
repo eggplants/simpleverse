@@ -17,9 +17,9 @@ setup(
     url="https://github.com/eggplants/simpleverse",
     author="eggplants",
     packages=find_packages(),
-    python_requires=">=3.0",
+    python_requires=">=3.5",
     include_package_data=True,
     license="MIT",
-    install_requires=["requests"],
+    install_requires=open('requirements.txt').read().splitlines(),
     entry_points={"console_scripts": ["simv=simpleverse.main:main"]},
 )
