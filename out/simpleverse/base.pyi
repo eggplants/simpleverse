@@ -1,5 +1,5 @@
 import requests
-
+from typing import Any
 
 class BaseVerseRequests:
     URL: str
@@ -7,3 +7,5 @@ class BaseVerseRequests:
     def __init__(self) -> None: ...
     @staticmethod
     def validate_response(res: requests.Response) -> None: ...
+    @staticmethod
+    def validate_parameter(val: Any, min: int, max: int, name: str) -> None: ...

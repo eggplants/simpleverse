@@ -7,3 +7,4 @@ pixivpy/
 dist/
 __pycache__/
 *egg-info/
+*.json

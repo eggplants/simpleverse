@@ -1,11 +1,11 @@
 import argparse
-
 from .create_user import CreateUser as CreateUser
 from .get_post import GetPostInfo as GetPostInfo
 from .get_user import GetUserInfo as GetUserInfo
 from .submit_post import SubmitPost as SubmitPost
+from typing import Any
 
-
+def pprint_json(json_obj: Any) -> None: ...
 def func_create_user(ns: argparse.Namespace) -> None: ...
 def func_update_user(ns: argparse.Namespace) -> None: ...
 def func_get_post(ns: argparse.Namespace) -> None: ...

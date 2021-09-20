@@ -1,6 +1,5 @@
 from .base import BaseVerseRequests as BaseVerseRequests
 
-
 class CreateUser(BaseVerseRequests):
     def create_user(self, name: str, description: str) -> str: ...
     def update_user(self, name: str, description: str) -> str: ...

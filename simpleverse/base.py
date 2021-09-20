@@ -1,5 +1,8 @@
 # from os.path import expanduser, join
 
+from sys import getsizeof
+from typing import Any
+
 import requests
 from requests.exceptions import RequestException
 
@@ -35,6 +38,12 @@ class BaseVerseRequests(object):
     @staticmethod
     def validate_response(res: requests.Response) -> None:
         if not res.ok:
-            raise RequestException(
-                f"{res.status_code}: {res.text}"
-            )
+            raise RequestException(f"{res.status_code}: {res.text}")
+
+    @staticmethod
+    def validate_parameter(val: Any, min: int, max: int, name: str) -> None:
+        len_val = getsizeof(val)
+        assert max >= min, "{} > {} is invalid".format(min, max)
+        assert max >= len_val >= min, 'invalid "{}" length ({} >= {} >= {})'.format(
+            name, max, len_val, min
+        )

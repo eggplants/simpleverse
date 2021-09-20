@@ -116,41 +116,7 @@ $ simv gp | jq '.[]|select(._user_id=="b6e4ae19fc2c59ce55c726de44a40dc825faa04d"
 <summary>Classes and its methods of simpleverse</summary>
 
 ```python
-from simpleverse import (CreateUser,
-                         GetPostInfo,
-                         GetUserInfo,
-                         SubmitPost)
 
-
-class CreateUser(BaseVerseRequests):
-    def create_user(self, name: str, description: str) -> str: ...
-    def update_user(self, name: str, description: str) -> str: ...
-
-
-class GetPostInfo(BaseVerseRequests):
-    def get_post_all(self) -> List[PostInfo]: ...
-    def get_post(self, id_: str) -> PostInfo: ...
-    def get_post_OData(
-        self,
-        filter_: Optional[str],
-        order_by: Optional[str],
-        limit: Optional[str],
-        skip: Optional[str]
-    ) -> List[PostInfo]: ...
-
-
-class GetUserInfo(BaseVerseRequests):
-    def get_user_all(self) -> List[UserInfo]: ...
-    def get_user(self, id_: str) -> UserInfo: ...
-
-
-class SubmitPost(BaseVerseRequests):
-    def submit_post(
-        self,
-        text: str,
-        rep_user_id: Optional[str],
-        rep_post_id: Optional[str]
-    ) -> str: ...
 ```
 
 </details>
@@ -161,7 +127,7 @@ class SubmitPost(BaseVerseRequests):
 
 - [エンジニア・プログラマにしか使えない SNS を作ってみた話](https://qiita.com/HawkClaws/items/599d7666f55e79ef7f56)
 - [Swagger](https://editor.swagger.io/?url=https://gist.githubusercontent.com/YusukeIwaki/ce8a7250fb7e5279267c495324de19f7/raw/292eb24fb381c9af49fc42c901794ec2d98d134a/openapi.yml)
-- [エンジニア・プログラマにしか使えないSNSのWebクライアント](https://lightwill.tokyo/dev/sns/?selectUserId=b6e4ae19fc2c59ce55c726de44a40dc825faa04d)
+- [エンジニア・プログラマにしか使えない SNS の Web クライアント](https://lightwill.tokyo/dev/sns/?selectUserId=b6e4ae19fc2c59ce55c726de44a40dc825faa04d)
   - posts of spesific user: `https://lightwill.tokyo/dev/sns/?selectUserId={userid}`
 - [hir0o/sns-for-engineer](https://github.com/hir0o/sns-for-engineer)
   - deployed at: <http://sns-for-engineer.vercel.app/>

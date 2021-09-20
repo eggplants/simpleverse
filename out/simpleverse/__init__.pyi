@@ -1,5 +1,9 @@
 from .base import BaseVerseRequests as BaseVerseRequests
+from .create_like import CreateLike as CreateLike
 from .create_user import CreateUser as CreateUser
+from .get_image import GetImageInfo as GetImageInfo
+from .get_like import GetLikeInfo as GetLikeInfo
 from .get_post import GetPostInfo as GetPostInfo
 from .get_user import GetUserInfo as GetUserInfo
+from .submit_image import SubmitImage as SubmitImage
 from .submit_post import SubmitPost as SubmitPost

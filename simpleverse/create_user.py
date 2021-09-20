@@ -9,15 +9,11 @@ class CreateUser(BaseVerseRequests):
     def create_user(self, name: str, description: str) -> str:
         if len(name) > 300 or len(description) > 300:
             raise ValueError(
-                f"name = {len(name)}, "
-                f"description = {len(description)}"
+                f"name = {len(name)}, " f"description = {len(description)}"
             )
         res = requests.post(
             url=self.get_endpoint("/user/create_user"),
-            data=dumps({
-                "name": name,
-                "description": description
-            })
+            data=dumps({"name": name, "description": description}),
         )
         self.validate_response(res)
         res_id = res.json()["id"]
@@ -25,17 +21,11 @@ class CreateUser(BaseVerseRequests):
         return res_id
 
     def update_user(self, name: str, description: str) -> str:
-        if len(name) > 300 or len(description) > 300:
-            raise ValueError(
-                f"name = {len(name)}, "
-                f"description = {len(description)}"
-            )
+        self.validate_parameter(name, 0, 30, "name")
+        self.validate_parameter(description, 0, 300, "description")
         res = requests.put(
             url=self.get_endpoint("/user/create_user"),
-            data=dumps({
-                "name": name,
-                "description": description
-            })
+            data=dumps({"name": name, "description": description}),
         )
         self.validate_response(res)
         res_id = res.json()["id"]
