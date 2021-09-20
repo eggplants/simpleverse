@@ -88,7 +88,8 @@ def test_get_user() -> None:
 
 def test_submit_post() -> None:
     post_id = SP.submit_post(
-        text=("hello woooooooold!\n" "(this post submitted by https://git.io/JzmhD)")
+        text=("hello woooooooold!\n" "(this post submitted by https://git.io/JzmhD)"),
+        test=True,
     )
     assert len(post_id) == 36
 
