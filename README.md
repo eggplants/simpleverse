@@ -157,20 +157,51 @@ class SubmitPost(BaseVerseRequests):
 
 <!-- markdownlint-enable MD033 -->
 
-## TIPS/Links
+## Links
+
+### Docs
+
+- [HawkClaws/versatileapi](https://github.com/HawkClaws/versatileapi)
+  - API generator
 
 - [エンジニア・プログラマにしか使えない SNS を作ってみた話](https://qiita.com/HawkClaws/items/599d7666f55e79ef7f56)
   - Author's article
 - [Swagger](https://editor.swagger.io/?url=https://gist.githubusercontent.com/YusukeIwaki/ce8a7250fb7e5279267c495324de19f7/raw/292eb24fb381c9af49fc42c901794ec2d98d134a/openapi.yml)
-  - Versatileapi's schema in Swagger 
-- [エンジニア・プログラマにしか使えないSNSのWebクライアント](https://lightwill.tokyo/dev/sns/?selectUserId=b6e4ae19fc2c59ce55c726de44a40dc825faa04d)
-  - Web Client 
+  - Versatileapi's schema in Swagger
+
+### WebUI Clients (deploying somewhare)
+
+- [chamegashi/Engineer_SNS_Test_Site](https://chamegashi.github.io/Engineer_SNS_Test_Site/)
+  - Repo: https://github.com/chamegashi/Engineer_SNS_Test_Site
+- [dala00/engineer-sns-client](http://engineer-sns-client.vercel.app/)
+  - Repo: https://github.com/dala00/engineer-sns-client
+- [hir0o/sns-for-engineer](http://sns-for-engineer.vercel.app/)
+  - Repo: https://github.com/hir0o/sns-for-engineer
+- [lightwill/sns](https://lightwill.tokyo/dev/sns/)
   - Posts of spesific user: `https://lightwill.tokyo/dev/sns/?selectUserId={userid}`
-- [hir0o/sns-for-engineer](https://github.com/hir0o/sns-for-engineer)
-  - Web Client
-  - Deployed at: <http://sns-for-engineer.vercel.app/>
 - [nison/json-sns-viewer](https://sns-viewer.nison.jp/)
-  -  Web Client
+  - Repo: https://github.com/nison-okrock/json-sns-viewer
+- [mehm8128/twitter-for-engineer](https://twitter-for-engineer-gs7w7u3rv-mehm8128.vercel.app/)
+  - Repo: https://github.com/mehm8128/twitter-for-engineer
+- [standard-software/programmer-only-sns](https://standard-software.github.io/programmer-only-sns/)
+  - Repo: https://github.com/standard-software/programmer-only-sns 
+- [voidproc/engineer-sns-client](https://codesandbox.io/s/engineer-sns-client-l6n6j)
+  - Repo: https://github.com/voidproc/engineer-sns-client
+- [yosket/engineer-sns](https://sofeap.vercel.app/)
+  - Repo: https://github.com/yosket/engineer-sns
+  - Article: [『エンジニア・プログラマにしか使えないSNSを作ってみた話』のクライアントを作ってみた話](https://zenn.dev/yosket/articles/a4402ffa2a12e4)
+
+### CUI Clients
+
+- [daiji-tsutsui/Beelzebub](https://github.com/daiji-tsutsui/Beelzebub)
+  - Ruby
+- [elderica/esns](https://github.com/elderica/esns)
+  - Racket
+- [javaboy-github/only-programer-sns-client](https://github.com/javaboy-github/only-programer-sns-client)
+  - Golang
+- [nyanpyou106/versatileapisns_client](https://github.com/nyanpyou106/versatileapisns_client)
+  - Python
+
 
 ## License
 
