@@ -163,7 +163,6 @@ class SubmitPost(BaseVerseRequests):
 
 - [HawkClaws/versatileapi](https://github.com/HawkClaws/versatileapi)
   - API generator
-
 - [エンジニア・プログラマにしか使えない SNS を作ってみた話](https://qiita.com/HawkClaws/items/599d7666f55e79ef7f56)
   - Author's article
 - [Swagger](https://editor.swagger.io/?url=https://gist.githubusercontent.com/YusukeIwaki/ce8a7250fb7e5279267c495324de19f7/raw/292eb24fb381c9af49fc42c901794ec2d98d134a/openapi.yml)
