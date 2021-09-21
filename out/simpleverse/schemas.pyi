@@ -15,7 +15,6 @@ class PostRequest(TypedDict):
     in_reply_to_text_id: Optional[str]
 
 class LikeRequest(TypedDict):
-    text: str
     like_count: int
 
 class PostInfo(TypedDict):

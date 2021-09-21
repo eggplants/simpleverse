@@ -1,6 +1,7 @@
-import requests
 from sys import getsizeof as getsizeof
 from typing import Union
+
+import requests
 
 class BaseVerseRequests:
     URL: str
@@ -9,4 +10,6 @@ class BaseVerseRequests:
     @staticmethod
     def validate_response(res: requests.Response) -> None: ...
     @staticmethod
-    def validate_parameter(val: Union[int, str], min: int, max: int, name: str) -> None: ...
+    def validate_parameter(
+        val: Union[int, str], min: int, max: int, name: str
+    ) -> None: ...

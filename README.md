@@ -19,17 +19,23 @@ pip install simpleverse
 
 ```text
 $ simv -h
-usage: simv [-h] {create_user,cu,update_user,uu,get_post,gp,get_user,gu,submit_post,sp} ...
+usage: simv [-h]
+            {create_like,cl,create_user,cu,update_user,uu,get_like,gl,get_image,gi,get_post,gp,get_user,gu,submit_post,sp,submit_image,si}
+            ...
 
 Simple command for sending requests to versatileapi
 
 positional arguments:
-  {create_user,cu,update_user,uu,get_post,gp,get_user,gu,submit_post,sp}
+  {create_like,cl,create_user,cu,update_user,uu,get_like,gl,get_image,gi,get_post,gp,get_user,gu,submit_post,sp,submit_image,si}
+    create_like (cl)
     create_user (cu)
     update_user (uu)
+    get_like (gl)
+    get_image (gi)
     get_post (gp)
     get_user (gu)
     submit_post (sp)
+    submit_image (si)
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -116,7 +122,80 @@ $ simv gp | jq '.[]|select(._user_id=="b6e4ae19fc2c59ce55c726de44a40dc825faa04d"
 <summary>Classes and its methods of simpleverse</summary>
 
 ```python
+from simpleverse import (
+    CreateLike,
+    CreateUser,
+    GetImageInfo,
+    GetLikeInfo,
+    GetPostInfo,
+    GetUserInfo,
+    SubmitImage,
+    SubmitPost,
+)
 
+
+class CreateLike(BaseVerseRequests):
+    def create_like(self, post_id: str, like_count: int) -> str: ...
+
+class CreateUser(BaseVerseRequests):
+    def create_user(self, name: str, description: str) -> str: ...
+    def update_user(self, name: str, description: str) -> str: ...
+
+class GetImageInfo(BaseVerseRequests):
+    def get_image_all(self) -> List[ImageInfo]: ...
+    def get_image(self, image_id: str) -> ImageInfo: ...
+    def get_image_OData(
+        self,
+        filter_: Optional[str] = ...,
+        order_by: Optional[str] = ...,
+        limit: Optional[int] = ...,
+        skip: Optional[int] = ...,
+    ) -> List[ImageInfo]: ...
+
+class GetLikeInfo(BaseVerseRequests):
+    def get_like_all(self) -> List[LikeInfo]: ...
+    def get_like(self, post_id: str) -> LikeInfo: ...
+    def get_like_OData(
+        self,
+        filter_: Optional[str] = ...,
+        order_by: Optional[str] = ...,
+        limit: Optional[int] = ...,
+        skip: Optional[int] = ...,
+    ) -> List[LikeInfo]: ...
+
+class GetPostInfo(BaseVerseRequests):
+    def get_post_all(self) -> List[PostInfo]: ...
+    def get_post(self, post_id: str) -> PostInfo: ...
+    def get_post_OData(
+        self,
+        filter_: Optional[str] = ...,
+        order_by: Optional[str] = ...,
+        limit: Optional[int] = ...,
+        skip: Optional[int] = ...,
+    ) -> List[PostInfo]: ...
+
+class GetUserInfo(BaseVerseRequests):
+    def get_user_all(self) -> List[UserInfo]: ...
+    def get_user(self, user_id: str) -> UserInfo: ...
+    def get_user_OData(
+        self,
+        filter_: Optional[str] = ...,
+        order_by: Optional[str] = ...,
+        limit: Optional[int] = ...,
+        skip: Optional[int] = ...,
+    ) -> List[UserInfo]: ...
+
+class SubmitImage(BaseVerseRequests):
+    def submit_image(self, image_data: str, post_id: str) -> str: ...
+
+class SubmitPost(BaseVerseRequests):
+    def submit_post(
+        self,
+        text: str,
+        rep_user_id: Optional[str] = ...,
+        rep_post_id: Optional[str] = ...,
+        test: bool = ...,
+    ) -> str: ...
 ```
 
 </details>
