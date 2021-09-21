@@ -13,9 +13,11 @@ class CreateLike(BaseVerseRequests):
         self.validate_parameter(like_count, 0, 1000, "like_count")
         params = cast(LikeRequest, {"like_count": like_count})
         res = requests.put(
-            url=self.get_endpoint("/text/" + post_id),
+            self.get_endpoint("/like/" + post_id),
             data=dumps(params),
-            headers={"Authorization": "LOVE"},
+            headers={
+                "Authorization": "LOVE",
+            },
         )
         self.validate_response(res)
         res_id: str = res.json()["id"]

@@ -22,7 +22,6 @@ class PostRequest(TypedDict):
 
 
 class LikeRequest(TypedDict):
-    text: str
     like_count: int
 
 
