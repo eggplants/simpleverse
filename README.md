@@ -1,6 +1,6 @@
 # simpleverse
 
-[![PyPI](https://img.shields.io/pypi/v/simpleverse?color=blue)](https://pypi.org/project/simpleverse) [![Maintainability](https://api.codeclimate.com/v1/badges/3dafcba23209bf5a4a04/maintainability)](https://codeclimate.com/github/eggplants/simpleverse/maintainability)
+[![Test](https://github.com/eggplants/simpleverse/actions/workflows/test.yml/badge.svg)](https://github.com/eggplants/simpleverse/actions/workflows/test.yml) [![PyPI](https://img.shields.io/pypi/v/simpleverse?color=blue)](https://pypi.org/project/simpleverse) [![Maintainability](https://api.codeclimate.com/v1/badges/3dafcba23209bf5a4a04/maintainability)](https://codeclimate.com/github/eggplants/simpleverse/maintainability)
 
 API wrapper for [versatileapi](https://versatileapi.herokuapp.com/api) in Python
 
