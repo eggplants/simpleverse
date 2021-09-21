@@ -9,7 +9,7 @@ python -m twine upload --repository pypi dist/*
 
 setup(
     name="simpleverse",
-    version="0.4",
+    version="0.5",
     description="API wrapper for versatileapi in Python",
     description_content_type="",
     long_description=open("README.md").read(),
@@ -20,6 +20,6 @@ setup(
     python_requires=">=3.5",
     include_package_data=True,
     license="MIT",
-    install_requires=open('requirements.txt').read().splitlines(),
+    install_requires=open("requirements.txt").read().splitlines(),
     entry_points={"console_scripts": ["simv=simpleverse.main:main"]},
 )
