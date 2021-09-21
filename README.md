@@ -20,13 +20,13 @@ pip install simpleverse
 ```text
 $ simv -h
 usage: simv [-h]
-            {create_like,cl,create_user,cu,update_user,uu,get_like,gl,get_image,gi,get_post,gp,get_user,gu,submit_post,sp,submit_image,si}
+            {create_like,cl,create_user,cu,update_user,uu,get_like,gl,get_image,gi,get_post,gp,get_user,gu,submit_post,sp,submit_image,si,repl,rl}
             ...
 
 Simple command for sending requests to versatileapi
 
 positional arguments:
-  {create_like,cl,create_user,cu,update_user,uu,get_like,gl,get_image,gi,get_post,gp,get_user,gu,submit_post,sp,submit_image,si}
+  {create_like,cl,create_user,cu,update_user,uu,get_like,gl,get_image,gi,get_post,gp,get_user,gu,submit_post,sp,submit_image,si,repl,rl}
     create_like (cl)
     create_user (cu)
     update_user (uu)
@@ -36,6 +36,7 @@ positional arguments:
     get_user (gu)
     submit_post (sp)
     submit_image (si)
+    repl (rl)
 
 optional arguments:
   -h, --help            show this help message and exit
