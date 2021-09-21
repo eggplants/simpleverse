@@ -1,8 +1,11 @@
 import argparse
+import shlex
 from base64 import b64encode
 from imghdr import what
 from json import dumps
-from typing import Any
+from typing import Any, List, Optional
+
+from prompt_toolkit.shortcuts import prompt
 
 from simpleverse import (
     CreateLike,
@@ -82,7 +85,34 @@ def func_submit_image(ns: argparse.Namespace) -> None:
     print(s.submit_image(d, ns.post_id))
 
 
-def parse() -> argparse.Namespace:
+def func_repl(ns: argparse.Namespace) -> None:
+    while True:
+        print("[cl,cu,uu,gl,gi,gp,gu,sp,si,exit,q]")
+        try:
+            inputs = "simv " + prompt("simv> ")
+        except KeyboardInterrupt:
+            print("bye.")
+            exit(0)
+        cmd_args = shlex.split(inputs, comments=False, posix=True)
+        repl(cmd_args)
+
+
+def repl(cmd_args: List[str]) -> None:
+    if cmd_args in (["simv", "exit"], ["simv", "q"]):
+        print("bye.")
+        exit(1)
+    try:
+        args = parse(cmd_args[1:])
+        args.func(args)
+    except KeyboardInterrupt:
+        print("bye.")
+        exit(0)
+    except SystemExit:
+        # print(cmd_args)
+        pass
+
+
+def parse(test_args: Optional[List[str]] = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog="simv",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -195,7 +225,13 @@ def parse() -> argparse.Namespace:
     )
     submit_image_parser.set_defaults(func=func_submit_image)
 
-    return parser.parse_args()
+    repl_parser = subparsers.add_parser("repl", aliases=["rl"], help="")
+    repl_parser.set_defaults(func=func_repl)
+
+    if test_args is not None:
+        return parser.parse_args(test_args)
+    else:
+        return parser.parse_args()
 
 
 def main() -> None:
