@@ -16,9 +16,9 @@ class CreateUser(BaseVerseRequests):
             data=dumps({"name": name, "description": description}),
         )
         self.validate_response(res)
-        res_id = res.json()["id"]
+        res_id = res.json()
         # self.__set_own_id(res_id)
-        return res_id
+        return str(res_id["id"]) if "id" in res_id else ""
 
     def update_user(self, name: str, description: str) -> str:
         self.validate_parameter(name, 0, 30, "name")
@@ -28,6 +28,9 @@ class CreateUser(BaseVerseRequests):
             data=dumps({"name": name, "description": description}),
         )
         self.validate_response(res)
-        res_id = res.json()["id"]
+        res_id = res.json()
         # self.__set_own_id(res_id)
-        return res_id
+        if "id" in res_id:
+            return str(res_id["id"])
+        else:
+            raise ValueError("'id' is missing in response.")

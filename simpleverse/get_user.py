@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, cast
 
 import requests
 
@@ -10,13 +10,21 @@ class GetUserInfo(BaseVerseRequests):
     def get_user_all(self) -> List[UserInfo]:
         res = requests.get(url=self.get_endpoint("/user/all"))
         self.validate_response(res)
-        return res.json()
+        res_user = res.json()
+        if type(res_user) is list:
+            return cast(List[UserInfo], res_user)
+        else:
+            raise ValueError("response is empty.")
 
     def get_user(self, user_id: str) -> UserInfo:
         self.validate_parameter(user_id, 40, 40, "user_id")
         res = requests.get(url=self.get_endpoint("/user/" + user_id))
         self.validate_response(res)
-        return res.json()
+        res_user = res.json()
+        if type(res_user) is dict:
+            return cast(UserInfo, res_user)
+        else:
+            raise ValueError("response is empty.")
 
     def get_user_OData(
         self,
@@ -38,4 +46,8 @@ class GetUserInfo(BaseVerseRequests):
             params["$skip"] = str(skip)
         res = requests.get(self.URL + "/user/all", params=params)
         self.validate_response(res)
-        return res.json()
+        res_user = res.json()
+        if type(res_user) is list:
+            return cast(List[UserInfo], res_user)
+        else:
+            raise ValueError("response is empty.")

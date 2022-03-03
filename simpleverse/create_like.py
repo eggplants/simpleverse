@@ -20,6 +20,9 @@ class CreateLike(BaseVerseRequests):
             },
         )
         self.validate_response(res)
-        res_id: str = res.json()["id"]
-        # self.__set_own_id(res_id)
-        return res_id
+        res_id = res.json()
+        if "id" in res_id:
+            # self.__set_own_id(res_id)
+            return str(res_id["id"])
+        else:
+            raise ValueError("'id' is missing in response.")

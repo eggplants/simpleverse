@@ -1,6 +1,6 @@
 # from os.path import expanduser, join
 
-from sys import getsizeof
+# from sys import getsizeof
 from typing import Union
 
 import requests

@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, cast
 
 import requests
 
@@ -10,13 +10,21 @@ class GetImageInfo(BaseVerseRequests):
     def get_image_all(self) -> List[ImageInfo]:
         res = requests.get(url=self.get_endpoint("/image/all"))
         self.validate_response(res)
-        return res.json()
+        res_img = res.json()
+        if type(res_img) is list:
+            return cast(List[ImageInfo], res_img)
+        else:
+            raise ValueError("response is empty.")
 
     def get_image(self, image_id: str) -> ImageInfo:
         self.validate_parameter(image_id, 36, 36, "image_id")
         res = requests.get(url=self.get_endpoint("/image/" + image_id))
         self.validate_response(res)
-        return res.json()
+        res_img = res.json()
+        if type(res_img) is dict:
+            return cast(ImageInfo, res_img)
+        else:
+            raise ValueError("response is empty.")
 
     def get_image_OData(
         self,
@@ -38,4 +46,8 @@ class GetImageInfo(BaseVerseRequests):
             params["$skip"] = str(skip)
         res = requests.get(self.URL + "/image/all", params=params)
         self.validate_response(res)
-        return res.json()
+        res_img = res.json()
+        if type(res_img) is list:
+            return cast(List[ImageInfo], res_img)
+        else:
+            raise ValueError("response is empty.")

@@ -1,5 +1,5 @@
 from json import dumps
-from typing import Optional, cast
+from typing import cast
 
 import requests
 
@@ -18,6 +18,9 @@ class SubmitImage(BaseVerseRequests):
             headers={"Authorization": "evolution"},
         )
         self.validate_response(res)
-        res_id = res.json()["id"]
+        res_id = res.json()
         # self.__set_own_id(res_id)
-        return res_id
+        if "id" in res_id:
+            return str(res_id["id"])
+        else:
+            raise ValueError("'id' is missing in response.")
