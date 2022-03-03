@@ -8,7 +8,7 @@ from .get_user import GetUserInfo
 from .submit_image import SubmitImage
 from .submit_post import SubmitPost
 
-__version__ = "0.7"
+__version__ = "0.8"
 
 __all__ = [
     "BaseVerseRequests",
