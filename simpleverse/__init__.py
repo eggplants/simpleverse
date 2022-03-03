@@ -7,3 +7,17 @@ from .get_post import GetPostInfo
 from .get_user import GetUserInfo
 from .submit_image import SubmitImage
 from .submit_post import SubmitPost
+
+__version__ = "0.6"
+
+__all__ = [
+    "BaseVerseRequests",
+    "CreateLike",
+    "CreateUser",
+    "GetImageInfo",
+    "GetLikeInfo",
+    "GetPostInfo",
+    "GetUserInfo",
+    "SubmitImage",
+    "SubmitPost",
+]

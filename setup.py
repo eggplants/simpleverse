@@ -1,25 +1,3 @@
-from setuptools import find_packages, setup  # type: ignore
+from setuptools import setup
 
-"""Update:
-(change version,)
-sudo rm -rf build dist *.egg-info
-python setup.py sdist bdist_wheel
-python -m twine upload --repository pypi dist/*
-"""
-
-setup(
-    name="simpleverse",
-    version="0.6",
-    description="API wrapper for versatileapi in Python",
-    description_content_type="",
-    long_description=open("README.md").read(),
-    long_description_content_type="text/markdown",
-    url="https://github.com/eggplants/simpleverse",
-    author="eggplants",
-    packages=find_packages(),
-    python_requires=">=3.5",
-    include_package_data=True,
-    license="MIT",
-    install_requires=open("requirements.txt").read().splitlines(),
-    entry_points={"console_scripts": ["simv=simpleverse.main:main"]},
-)
+setup()
