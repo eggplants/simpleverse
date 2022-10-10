@@ -78,7 +78,7 @@ def func_submit_image(ns: argparse.Namespace) -> None:
     body = repr(b64encode(open(ns.image, "rb").read()))
     img_type = what(ns.image)
     if img_type is None:
-        raise IOError("Is not given file a sort of an image?")
+        raise OSError("Is not given file a sort of an image?")
     d = "data:image/" + img_type + ";base64," + body
     print(s.submit_image(d, ns.post_id))
 
