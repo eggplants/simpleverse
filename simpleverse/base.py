@@ -7,7 +7,7 @@ import requests
 from requests.exceptions import RequestException
 
 
-class BaseVerseRequests(object):
+class BaseVerseRequests:
     URL = "https://versatileapi.herokuapp.com/api"
     # CONF_PATH = join(expanduser('~'), ".verse_id")
 
